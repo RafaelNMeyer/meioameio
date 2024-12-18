@@ -3,5 +3,5 @@ export default function Main() {
     <>
       <h1>Building..</h1>
     </>
-  )
+  );
 }
