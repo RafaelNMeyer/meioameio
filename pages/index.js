@@ -1,7 +1,7 @@
 export default function Main() {
-	return (
-		<>
-			<h1>Building..</h1>
-		</>
-	)
+  return (
+    <>
+      <h1>Building..</h1>
+    </>
+  )
 }
