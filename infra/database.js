@@ -28,7 +28,8 @@ async function getNewClient() {
     password,
     host,
     port,
-    database
+    database,
+    ssl: true
   });
 
   await client.connect();
