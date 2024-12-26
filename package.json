@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "services:up": "docker compose -f infra/compose.yaml up -d",
-    "services:down": "docker compose -f infra/compose.yaml down"
+    "services:down": "docker compose -f infra/compose.yaml down",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "next": "^15.1.1",
@@ -14,6 +16,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "prettier": "3.4.2"
   }
 }
