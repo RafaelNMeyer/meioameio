@@ -11,11 +11,13 @@
     "migration:create": "node-pg-migrate -m infra/migrations create",
     "migration:up": "node-pg-migrate -m infra/migrations up --envPath .env.development",
     "pretest": "npm run predev",
-    "test": "concurrently \"next dev\" jest",
+    "test": "concurrently -n next,jest --hide next -k -s command-jest \"next dev\" \"jest --runInBand --verbose\"",
     "posttest": "npm run postdev",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watchAll --runInBand --verbose"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
+    "dotenv-expand": "^12.0.1",
     "next": "^15.1.1",
     "pg": "^8.13.1",
     "react": "^19.0.0",

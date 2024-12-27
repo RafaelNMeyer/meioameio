@@ -15,13 +15,9 @@ async function query(queryObject) {
 }
 
 async function getNewClient() {
-
-
   const { Client } = pg;
   const client = new Client(getClientConfig());
-
   await client.connect();
-
   return client;
 }
 
