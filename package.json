@@ -14,7 +14,7 @@
     "test": "concurrently -n next,jest --hide next -k -s command-jest \"next dev\" \"jest --runInBand --verbose\"",
     "posttest": "npm run postdev",
     "test:watch": "jest --watchAll --runInBand --verbose",
-    "commit": "cz"
+    "commit": "cz",
   },
   "dependencies": {
     "dotenv": "^16.4.7",
@@ -25,6 +25,8 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "async-retry": "^1.3.3",
     "commitizen": "^4.3.1",
     "concurrently": "^9.1.0",
