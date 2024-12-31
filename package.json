@@ -10,6 +10,8 @@
     "services:down": "docker compose -f infra/compose.yaml down",
     "migration:create": "node-pg-migrate -m infra/migrations create",
     "migration:up": "node-pg-migrate -m infra/migrations up --envPath .env.development",
+    "prettier:check": "prettier -c .",
+    "prettier:fix": "prettier -w .",
     "pretest": "npm run predev",
     "test": "concurrently -n next,jest --hide next -k -s command-jest \"next dev\" \"jest --runInBand --verbose\"",
     "posttest": "npm run postdev",
