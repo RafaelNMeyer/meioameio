@@ -1,3 +1,3 @@
-const Config = { extends: ['@commitlint/config-conventional'] };
+const Config = { extends: ["@commitlint/config-conventional"] };
 
 module.exports = Config;

@@ -1,7 +1,7 @@
 import retry from "async-retry";
 import db from "infra/database.js";
 
-require('dotenv').config({ path: '.env.development' })
+require("dotenv").config({ path: ".env.development" });
 
 async function clearDatabase() {
   try {
@@ -15,8 +15,7 @@ async function waitForAllServices() {
   await retry(async () => {
     const res = await fetch("http://localhost:3000/api/v1/status");
     if (res.status !== 200) throw new Error();
-  },
-    {})
+  }, {});
 }
 
 export default { clearDatabase, waitForAllServices };
