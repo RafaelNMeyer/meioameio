@@ -38,4 +38,9 @@ function getClientConfig() {
   };
 }
 
-export default { query, getNewClient };
+const database = {
+  query,
+  getNewClient,
+};
+
+export default database;

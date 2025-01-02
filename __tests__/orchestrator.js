@@ -1,11 +1,11 @@
 import retry from "async-retry";
-import db from "infra/database.js";
+import database from "infra/database.js";
 
 require("dotenv").config({ path: ".env.development" });
 
 async function clearDatabase() {
   try {
-    await db.query("drop schema public cascade; create schema public;");
+    await database.query("drop schema public cascade; create schema public;");
   } catch (err) {
     console.log(err);
   }
@@ -18,4 +18,9 @@ async function waitForAllServices() {
   }, {});
 }
 
-export default { clearDatabase, waitForAllServices };
+const orchestrator = {
+  clearDatabase,
+  waitForAllServices,
+};
+
+export default orchestrator;

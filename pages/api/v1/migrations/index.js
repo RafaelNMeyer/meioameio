@@ -6,10 +6,10 @@ export default async function migrations(req, res) {
   const client = await db.getNewClient();
   try {
     let dryRun = false;
-    if (req.method === "POST") {
-    } else if (req.method === "GET") {
+
+    if (req.method === "GET") {
       dryRun = true;
-    } else {
+    } else if (req.method !== "POST") {
       res.status(403).json({ Message: "Method not allowed" });
     }
 
