@@ -6,7 +6,6 @@ export default async function migrations(req, res) {
   const client = await db.getNewClient();
   try {
     let dryRun = false;
-
     if (req.method === "GET") {
       dryRun = true;
     } else if (req.method !== "POST") {
