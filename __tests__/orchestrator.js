@@ -12,10 +12,16 @@ async function clearDatabase() {
 }
 
 async function waitForAllServices() {
-  await retry(async () => {
-    const res = await fetch("http://localhost:3000/api/v1/status");
-    if (res.status !== 200) throw new Error();
-  }, {});
+  await retry(
+    async () => {
+      const res = await fetch("http://localhost:3000/api/v1/status");
+      if (res.status !== 200) throw new Error();
+    },
+    {
+      retries: 100,
+      maxTimeout: 1000,
+    },
+  );
 }
 
 const orchestrator = {
