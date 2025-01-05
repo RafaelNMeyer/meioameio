@@ -39,6 +39,6 @@ export default async function migrations(req, res) {
       .status(500)
       .json({ Message: "Error to process migrations", Error: err });
   } finally {
-    await client.end();
+    await client?.end();
   }
 }
